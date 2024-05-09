@@ -4,6 +4,7 @@ const errorMiddleware = require("./middlewares/error");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const dotenv = require("dotenv");
+const cors=require('cors')
 dotenv.config({ path: path.join(__dirname, "config/config.env") });
 
 app.use(express.json());
@@ -26,6 +27,11 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
   });
 }
+app.use(
+    cors({
+      origin:"http://localhost:3000",
+    })
+  );
 
 app.use(errorMiddleware);
 

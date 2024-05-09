@@ -6,7 +6,6 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config({ path: path.join(__dirname, "config/config.env") });
-
 app.use(
   cors({
     origin:"http://localhost:3000",

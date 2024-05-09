@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.2",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "countries-list": "^2.6.1",
     "mdbreact": "^5.2.0",
     "rc-slider": "^10.1.0",

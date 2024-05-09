@@ -6,7 +6,11 @@ const path = require("path");
 const dotenv = require("dotenv");
 const cors=require('cors')
 dotenv.config({ path: path.join(__dirname, "config/config.env") });
-
+app.use(
+    cors({
+        
+    })
+  );
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
@@ -27,11 +31,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
   });
 }
-app.use(
-    cors({
-      origin:"http://localhost:3000",
-    })
-  );
+
 
 app.use(errorMiddleware);
 
